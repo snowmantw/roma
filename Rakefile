@@ -74,7 +74,6 @@ end
 package_task = PackageTask.new(SPEC) do |pkg|
 end
 
-
 Rake::RDocTask.new("doc") { |rdoc|
   rdoc.rdoc_dir = 'doc'
   rdoc.title = "ROMA documents"
@@ -82,3 +81,10 @@ Rake::RDocTask.new("doc") { |rdoc|
   rdoc.rdoc_files.include('lib/**/*.rb')
   rdoc.rdoc_files.include("README")
 }
+
+task default: [:test]
+
+desc 'run test'
+task :test do
+  ruby 'ruby/server/test/run-test.rb'
+end

@@ -18,4 +18,5 @@ end
 
 group :test do
   gem 'test-unit'
+  gem 'roma-client'
 end

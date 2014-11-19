@@ -1,14 +1,15 @@
 #!/usr/bin/env ruby
 
+ENV['BUNDLE_GEMFILE'] =
+  File.expand_path(File.join(File.dirname(__FILE__),
+                             '..', '..', '..', 'Gemfile'))
+require 'bundler/setup'
 require 'test/unit'
 require 'pathname'
 
 base_path = Pathname(__FILE__).dirname.parent.parent.expand_path
 $LOAD_PATH.unshift("#{base_path}/server/lib")
 $LOAD_PATH.unshift("#{base_path}/server/test")
-
-client_base_path = Pathname(__FILE__).dirname.parent.parent.parent.parent.expand_path
-$LOAD_PATH.unshift("#{client_base_path}/roma-ruby-client/lib")
 
 require 'roma-test-utils'
 
