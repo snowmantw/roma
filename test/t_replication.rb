@@ -256,6 +256,7 @@ class ClusterReplicationTest < Test::Unit::TestCase
       v += 1
     }
     assert_equal("EXISTS", res)
+    sleep 0.5
     assert_equal(4, @rc_replica.get("cnt"))
   end
 
